@@ -1,6 +1,8 @@
 # err-table-worker
 cloudflare worker that logs http errors to airtable
 
+![err-table](https://dani.nyc3.digitaloceanspaces.com/err-table-small.png)
+
 ## prerequisite
 you need the application to already be behind cloudflare
 
