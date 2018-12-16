@@ -10,8 +10,9 @@ async function handleRequest(request) {
   try {
     let clonedRequest = request.clone()
     postData = await clonedRequest.json();
+    console.log(postData)
   } catch (e) {
-  
+
   }
 
   const response = await fetch(request)
@@ -21,7 +22,10 @@ async function handleRequest(request) {
     let body = {
         "fields": {
           "error": response.status,
-          // "request-headers": JSON.stringify(request.headers.get('header1')),
+          "timestamp":  new Date().toString(),
+          "request-user-agent": JSON.stringify(request.headers.get('user-agent')),
+          "request-ip": JSON.stringify(request.headers.get('cf-connecting-ip')),
+          "request-country": JSON.stringify(request.headers.get('Cf-Ipcountry')),
           "request-method": JSON.stringify(request.method),
           "request": JSON.stringify(postData)
         }
@@ -35,6 +39,9 @@ async function handleRequest(request) {
       },
       body: JSON.stringify(body)
     })
+
+    let json = await res.json(); 
+    // console.log(json) <-- uncomment this to see response from airtable api
   }
   return response
 }
