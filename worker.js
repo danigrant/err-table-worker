@@ -27,8 +27,6 @@ async function handleRequest(request) {
         }
     }
 
-    console.log(`thanks Fouad`)
-
     let res = await fetch(`${airtableUrl}`, {
       method: 'POST',
       headers: {
