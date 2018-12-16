@@ -23,6 +23,7 @@ async function handleRequest(request) {
         "fields": {
           "error": response.status,
           "timestamp":  new Date().toString(),
+          "url": request.url,
           "request-user-agent": JSON.stringify(request.headers.get('user-agent')),
           "request-ip": JSON.stringify(request.headers.get('cf-connecting-ip')),
           "request-country": JSON.stringify(request.headers.get('Cf-Ipcountry')),
