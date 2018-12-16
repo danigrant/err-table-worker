@@ -1,7 +1,7 @@
 # err-table-worker
 cloudflare worker that logs http errors to airtable
 
-![err-table](https://dani.nyc3.digitaloceanspaces.com/err-table.png)
+![err-table](https://dani.nyc3.digitaloceanspaces.com/err-table-small.png)
 
 ## prerequisite
 you need the application to already be behind cloudflare
@@ -14,4 +14,4 @@ copy the file from worker.js into a workers script, replace the airtable url and
 
 ## optional - use IFTTT to send you a text every time there's an error
 
-![ifttt](https://dani.nyc3.digitaloceanspaces.com/err-table-ifttt.png)
+![ifttt](https://dani.nyc3.digitaloceanspaces.com/err-table-ifttt-small.png)
